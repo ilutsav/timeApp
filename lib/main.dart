@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:timer/model/timer_info.dart';
 import 'package:timer/screens/homepage.dart';
 
 void main() {
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const HomePage());
+        home: ChangeNotifierProvider(
+            create: (context) => TimerInfo(), child: const HomePage()));
   }
 }
